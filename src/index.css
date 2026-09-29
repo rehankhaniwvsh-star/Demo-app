@@ -1,0 +1,570 @@
+@import "tailwindcss";
+
+:root {
+  --card: #ffffff;
+  --ring: #ff5238;
+  --input: #f0f0f2;
+  --muted: #f4f4f6;
+  --accent: #fff0eb;
+  --border: #e8e8ed;
+  --radius: 1.25rem;
+  --chart-1: #ff5238;
+  --chart-2: #ff7a00;
+  --chart-3: #10b981;
+  --chart-4: #3b82f6;
+  --chart-5: #8b5cf6;
+  --popover: #ffffff;
+  --primary: #ff5238;
+  --primary-hover: #e8432a;
+  --primary-gradient: linear-gradient(135deg, #ff416c 0%, #ff5238 50%, #ff7a00 100%);
+  --sidebar: #fafafc;
+  --spacing: 0.27rem;
+  --font-mono: IBM Plex Mono, monospace;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --secondary: #f4f4f7;
+  --background: #fbfbfa;
+  --font-serif: Lora, serif;
+  --foreground: #111116;
+  --destructive: #ef4444;
+  --shadow-blur: 8px;
+  --shadow-color: hsl(15 80% 50% / 0.12);
+  --sidebar-ring: #ff5238;
+  --shadow-spread: 0px;
+  --letter-spacing: -0.025em;
+  --shadow-opacity: 0.12;
+  --sidebar-accent: #f0f0f4;
+  --sidebar-border: #e8e8ed;
+  --card-foreground: #111116;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 4px;
+  --sidebar-primary: #ff5238;
+  --muted-foreground: #6b6b7b;
+  --accent-foreground: #ff5238;
+  --popover-foreground: #111116;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #111116;
+  --secondary-foreground: #111116;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #ff5238;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+.dark {
+  --card: #18181f;
+  --ring: #ff6b4a;
+  --input: #272733;
+  --muted: #22222c;
+  --accent: #2c1e1c;
+  --border: #2c2c3a;
+  --radius: 1.25rem;
+  --chart-1: #ff6b4a;
+  --chart-2: #ffa043;
+  --chart-3: #34d399;
+  --chart-4: #60a5fa;
+  --chart-5: #a78bfa;
+  --popover: #18181f;
+  --primary: #ff5238;
+  --primary-hover: #ff6b4a;
+  --primary-gradient: linear-gradient(135deg, #ff416c 0%, #ff5238 50%, #ff7a00 100%);
+  --sidebar: #131318;
+  --spacing: 0.27rem;
+  --font-mono: IBM Plex Mono, monospace;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --secondary: #22222c;
+  --background: #0e0e12;
+  --font-serif: Lora, serif;
+  --foreground: #f4f4f8;
+  --destructive: #f87171;
+  --shadow-blur: 10px;
+  --shadow-color: hsl(0 0% 0% / 0.4);
+  --sidebar-ring: #ff5238;
+  --shadow-spread: 0px;
+  --letter-spacing: -0.025em;
+  --shadow-opacity: 0.3;
+  --sidebar-accent: #22222c;
+  --sidebar-border: #2c2c3a;
+  --card-foreground: #f4f4f8;
+  --shadow-offset-x: 0px;
+  --shadow-offset-y: 4px;
+  --sidebar-primary: #ff5238;
+  --muted-foreground: #9e9eb2;
+  --accent-foreground: #ff7a00;
+  --popover-foreground: #f4f4f8;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #f4f4f8;
+  --secondary-foreground: #f4f4f8;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #ff5238;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-card: var(--card);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-radius: var(--radius);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-popover: var(--popover);
+  --color-primary: var(--primary);
+  --color-sidebar: var(--sidebar);
+  --color-spacing: var(--spacing);
+  --color-font-mono: var(--font-mono);
+  --color-font-sans: var(--font-sans);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-font-serif: var(--font-serif);
+  --color-foreground: var(--foreground);
+  --color-destructive: var(--destructive);
+  --color-shadow-blur: var(--shadow-blur);
+  --color-shadow-color: var(--shadow-color);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-shadow-spread: var(--shadow-spread);
+  --color-letter-spacing: var(--letter-spacing);
+  --color-shadow-opacity: var(--shadow-opacity);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-card-foreground: var(--card-foreground);
+  --color-shadow-offset-x: var(--shadow-offset-x);
+  --color-shadow-offset-y: var(--shadow-offset-y);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    letter-spacing: var(--letter-spacing);
+  }
+}
+
+/* Background Subtle Cross-Grid Lines */
+.bg-grid-mesh {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dark .bg-grid-mesh {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Glow Ambient Auras */
+.ambient-glow-warm {
+  background: radial-gradient(circle at center, rgba(255, 82, 56, 0.22) 0%, rgba(255, 122, 0, 0.12) 40%, transparent 70%);
+  filter: blur(40px);
+}
+
+.ambient-glow-dark {
+  background: radial-gradient(circle at center, rgba(255, 82, 56, 0.18) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 80%);
+  filter: blur(50px);
+}
+
+/* Sparkle Logo Animation */
+@keyframes sparkle-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+  }
+  50% {
+    transform: scale(1.18) rotate(15deg);
+    opacity: 0.92;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+  }
+}
+
+.sparkle-icon-animated {
+  animation: sparkle-pulse 3s infinite ease-in-out;
+}
+
+/* Buttons and Shaders */
+.btn-pill-dark {
+  background: #111116;
+  color: #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-dark:hover {
+  background: #23232e;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 0 20px rgba(255, 82, 56, 0.25);
+}
+
+.btn-pill-primary {
+  background: linear-gradient(135deg, #ff416c 0%, #ff5238 50%, #ff7a00 100%);
+  color: #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(255, 82, 56, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-primary:hover {
+  transform: translateY(-1.5px) scale(1.01);
+  box-shadow: 0 8px 26px rgba(255, 82, 56, 0.5);
+}
+
+/* ========================================================
+   BUTTON SHADERS & ANIMATION EFFECTS
+   ======================================================== */
+
+@keyframes shader-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  50%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+@keyframes shader-sweep-fast {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+  }
+}
+
+@keyframes shader-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px -2px var(--primary), 0 4px 16px -2px rgba(112, 51, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 26px 4px var(--primary), 0 8px 24px -2px rgba(112, 51, 255, 0.65);
+  }
+}
+
+@keyframes shader-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shader-border-rotate {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+@keyframes button-float-subtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Base Shader Button Properties */
+.btn-shader {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shader:active {
+  transform: translateY(1px) scale(0.975);
+}
+
+/* Specular Light Ray Sheen Pseudo Element */
+.btn-shader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.38),
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-shader:hover::before {
+  animation: shader-sweep-fast 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Continuous Subtle Ambient Shader Sweep for Featured CTAs */
+.btn-shader-loop::before {
+  animation: shader-sweep 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Primary Button Shader: Vibrant Gradient Flow, Glass Bevel & Glow */
+.btn-shader-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, var(--primary) 0%, #8c4aff 50%, var(--primary) 100%);
+  background-size: 200% 200%;
+  animation: shader-gradient-flow 6s ease infinite;
+  color: var(--primary-foreground);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.18),
+    0 4px 14px -2px rgba(112, 51, 255, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shader-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+  transform: translateX(-150%) skewX(-22deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-shader-primary:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2),
+    0 8px 24px -2px rgba(112, 51, 255, 0.65);
+}
+
+.btn-shader-primary:hover::before {
+  animation: shader-sweep-fast 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-shader-primary:active {
+  transform: translateY(1px) scale(0.975);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.25),
+    0 2px 8px -2px rgba(112, 51, 255, 0.3);
+}
+
+/* Secondary Button Shader: Glass Frosting with Ambient Specular Rim */
+.btn-shader-secondary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 2px 6px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark .btn-shader-secondary {
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 2px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.btn-shader-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(112, 51, 255, 0.05),
+    rgba(112, 51, 255, 0.2),
+    rgba(112, 51, 255, 0.05),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-shader-secondary:hover {
+  transform: translateY(-1px);
+  border-color: var(--primary);
+  background: var(--muted);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 6px 18px -2px rgba(112, 51, 255, 0.15);
+}
+
+.btn-shader-secondary:hover::before {
+  animation: shader-sweep-fast 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-shader-secondary:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Emerald Shader Button: For Saves, Success & Download actions */
+.btn-shader-emerald {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.15),
+    0 4px 14px -2px rgba(16, 185, 129, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shader-emerald::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-shader-emerald:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 8px 22px -2px rgba(16, 185, 129, 0.6);
+}
+
+.btn-shader-emerald:hover::before {
+  animation: shader-sweep-fast 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-shader-emerald:active {
+  transform: translateY(1px) scale(0.975);
+}
+
+/* Accent Card Button (Inverted Theme Shader) */
+.btn-shader-accent {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--card);
+  color: var(--primary);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-shader-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(112, 51, 255, 0.12),
+    rgba(112, 51, 255, 0.3),
+    rgba(112, 51, 255, 0.12),
+    transparent
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-shader-accent:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    inset 0 1px 0 #ffffff,
+    0 10px 28px -4px rgba(0, 0, 0, 0.22);
+}
+
+.btn-shader-accent:hover::before {
+  animation: shader-sweep-fast 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-shader-accent:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Pulsing Ambient Glow effect */
+.btn-shader-glow {
+  animation: shader-pulse-glow 3s infinite ease-in-out;
+}
+
+/* Icon Animation on Button Hover */
+.btn-icon-hover-bounce {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-shader:hover .btn-icon-hover-bounce,
+.btn-shader-primary:hover .btn-icon-hover-bounce,
+.btn-shader-secondary:hover .btn-icon-hover-bounce,
+.btn-shader-emerald:hover .btn-icon-hover-bounce,
+.btn-shader-accent:hover .btn-icon-hover-bounce {
+  transform: scale(1.18) rotate(6deg);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-invoice-modal, .print-invoice-modal * {
+    visibility: visible;
+  }
+  .print-invoice-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#FF5238</color>
+    <color name="primary_variant">#E8432A</color>
+    <color name="secondary">#FF7A00</color>
+    <color name="background">#FBFBFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F4F4F7</color>
+    <color name="text_primary">#111116</color>
+    <color name="text_secondary">#6B6B7B</color>
+    <color name="status_paid">#10B981</color>
+    <color name="status_sent">#3B82F6</color>
+    <color name="status_draft">#6B7280</color>
+    <color name="status_overdue">#EF4444</color>
+</resources>

@@ -1,0 +1,7 @@
+# Robots.txt for Billnest
+User-agent: *
+Allow: /
+
+# Google Search Console XML Sitemap Location
+Sitemap: https://billsnest.vercel.app/sitemap.xml
+
